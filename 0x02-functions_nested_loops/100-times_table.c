@@ -1,3 +1,5 @@
+include "main.h"
+
 /**
  * print_times_table - Prints the n times table
  *
