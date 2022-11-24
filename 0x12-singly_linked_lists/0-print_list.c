@@ -1,24 +1,33 @@
+/*
+ * File: 0-print_list.c
+ * Author: Ukonu, Divine Chisom
+ */
+
 #include "lists.h"
+#include <stdio.h>
 
 /**
- *print_list - prints a linked list
- *@h:the head of the linked list
- *Return: the length of the string
+ * print_list - Prints all the elements of a list_t list.
+ * @h: The list_t list.
+ *
+ * Return: The number of nodes in h.
  */
+
 size_t print_list(const list_t *h)
 {
-
-
-	register int len = 0;
+	size_t nodes = 0;
 
 	while (h)
 	{
-		(!h->str)
-			? printf("[0] (nil)\n")
-			: printf("[%i] %s\n", h->len, h->str);
-		h = h->next;
-		len++;
-	}
-	return (len);
+		if (h->str == NULL)
+			printf("[0] (nil)\n");
 
+		else
+			printf("[%d] %s\n", h->len, h->str);
+
+		nodes++;
+		h = h->next;
+	}
+
+	return (nodes);
 }
