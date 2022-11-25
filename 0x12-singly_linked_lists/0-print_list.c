@@ -8,20 +8,33 @@
  * @h: singly linked list.
  * Return: number of elements in the list.
  */
-
-size_t print_list(const list_t *h)
+int main(void)
 {
-	size_t nelem;
+    list_t *h;
+    list_t *nnn;
+    list_t my_list = {"man", 5, NULL};
+    size_t nelem;
 
-	nelem = 0;
-	while (h != NULL)
-	{
-		if (h->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
-		else
-			printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
-		nelem++;
-	}
-	return (nelem);
+    h = &my_list;
+    nnn = malloc(sizeof(list_t));
+    if (nnn == NULL)
+    {
+        printf("Error\n");
+        return (1);
+    }
+    new->str = strdup("My_list");
+    nnn->len = 5;
+    nnn->next = h;
+    h = nnn;
+    nelem = print_list(h);
+    printf("-> %lu datas\n", nelem);
+
+    printf("\n");
+    free(nnn->str);
+    nnn->str = NULL;
+    n = print_list(h);
+    printf("-> %lu datas\n", nelem);
+
+    free(nnn);
+    return (0);
 }
